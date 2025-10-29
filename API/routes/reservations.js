@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
-const Catway = require("../models/Catway");
+const catway = require("../models/Catway");
 
 router.get("/", async (req, res) => {
   const catway = await Catway.findById(req.params.id);

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 
-const User = require("../models/user");
+const user = require("../models/user");
 const private = require("../middlewares/private");
 
 const SECRET_KEY = process.env.SECRET_KEY || "secret123";
