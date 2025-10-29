@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion des Utilisateurs</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">Port de plaisance Russel</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="./catways.html">Catways</a></li>
+        <li><a href="./reservations.html">Réservations</a></li>
+        <li><a href="./users.html">Utilisateurs</a></li>
+        <li><a href="./dashboard.html">Tableau de bord</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <h1>Gestion des Utilisateurs</h1>
+
+      <section id="user-list"></section>
+
+      <h2>Créer un utilisateur</h2>
+      <form id="addUserForm">
+        <input type="text" name="name" placeholder="Nom" required />
+        <input type="text" name="firstname" placeholder="Prénom" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input
+          type="password"
+          name="password"
+          placeholder="Mot de passe"
+          required
+        />
+        <button type="submit">Créer</button>
+      </form>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

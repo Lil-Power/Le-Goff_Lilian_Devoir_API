@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion des Catways</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">Port de plaisance Russel</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="./catways.html">Catways</a></li>
+        <li><a href="./reservations.html">Réservations</a></li>
+        <li><a href="./users.html">Utilisateurs</a></li>
+        <li><a href="./dashboard.html">Tableau de bord</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <h1>Gestion des Catways</h1>
+
+      <section id="catway-list"></section>
+
+      <h2>Ajouter un catway</h2>
+      <form id="addCatwayForm">
+        <input
+          type="number"
+          name="catwayNumber"
+          placeholder="Numéro"
+          required
+        />
+        <select name="catwayType">
+          <option value="long">Long</option>
+          <option value="short">Short</option>
+        </select>
+        <input type="text" name="catwayState" placeholder="État" required />
+        <button type="submit">Ajouter</button>
+      </form>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

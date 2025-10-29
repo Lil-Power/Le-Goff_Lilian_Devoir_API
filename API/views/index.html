@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil - Port de plaisance Russel</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-logo">Port de plaisance Russel</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="./catways.html">Catways</a></li>
+        <li><a href="./reservations.html">Réservations</a></li>
+        <li><a href="./users.html">Utilisateurs</a></li>
+        <li><a href="./dashboard.html">Tableau de bord</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="container">
+      <h1>Bienvenue sur l'application de votre port de plaisance</h1>
+      <p>
+        Vous retrouverez ici nos catways disponibles et pourrez faire vos
+        réservations.
+      </p>
+
+      <!-- Formulaire de connexion -->
+      <section class="login-form">
+        <h2>Connexion</h2>
+        <form id="loginForm">
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="password">Mot de passe :</label>
+          <input type="password" id="password" name="password" required />
+
+          <button type="submit">Se connecter</button>
+        </form>
+        <p id="loginMessage"></p>
+      </section>
+
+      <div>
+        <a href="./API_DOCUMENTATION.md">Documentation de l'API</a>
+      </div>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

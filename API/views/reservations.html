@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion des Réservations</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">Port de plaisance Russel</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="./catways.html">Catways</a></li>
+        <li><a href="./reservations.html">Réservations</a></li>
+        <li><a href="./users.html">Utilisateurs</a></li>
+        <li><a href="./dashboard.html">Tableau de bord</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <h1>Gestion des Réservations</h1>
+
+      <section id="reservation-list"></section>
+
+      <h2>Ajouter une réservation</h2>
+      <form id="addReservationForm">
+        <input
+          type="number"
+          name="catwayNumber"
+          placeholder="Numéro de catway"
+          required
+        />
+        <input
+          type="text"
+          name="clientName"
+          placeholder="Nom du client"
+          required
+        />
+        <input
+          type="text"
+          name="boatName"
+          placeholder="Nom du bateau"
+          required
+        />
+        <input type="date" name="startDate" required />
+        <input type="date" name="endDate" required />
+        <button type="submit">Ajouter</button>
+      </form>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

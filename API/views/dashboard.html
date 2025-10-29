@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tableau de Bord</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">Port de plaisance Russel</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="./catways.html">Catways</a></li>
+        <li><a href="./reservations.html">Réservations</a></li>
+        <li><a href="./users.html">Utilisateurs</a></li>
+        <li><a href="./dashboard.html">Tableau de bord</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <h1>Tableau de bord</h1>
+      <p id="user-info"></p>
+      <p id="today"></p>
+
+      <h2>Réservations en cours</h2>
+      <table id="reservationsTable">
+        <thead>
+          <tr>
+            <th>Catway</th>
+            <th>Client</th>
+            <th>Bateau</th>
+            <th>Début</th>
+            <th>Fin</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
