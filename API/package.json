@@ -7,6 +7,9 @@
     "dev": "env-cmd -f ./env/.env.dev nodemon ./bin/www",
     "prod": "env-cmd -f ./env/.env.prod node ./bin/www"
   },
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cookie-parser": "~1.4.4",
