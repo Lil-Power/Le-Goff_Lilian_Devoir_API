@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
@@ -67,9 +68,7 @@ app.use(function (err, req, res, next) {
 
 // DÉMARRAGE DU SERVEUR (pour Render)
 
-const PORT = process.env.PORT || 3000;
-
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 app.listen(port, "0.0.0.0", () => {
   console.log(`Serveur démarré sur le port ${port}`);
   console.log(`Environnement: ${process.env.NODE_ENV || "development"}`);

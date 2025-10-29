@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const reservationSchema = new mongoose.Schema(
   {
     clientName: { type: String, required: true },
-    dateStart: { type: Date, required: true },
-    dateEnd: { type: Date, required: true },
+    startDate: { type: Date, required: true },
+    endDate: { type: Date, required: true },
     notes: String,
   },
   { _id: true }
@@ -17,4 +17,5 @@ const catwaySchema = new mongoose.Schema({
   reservations: [reservationSchema],
 });
 
-module.exports = mongoose.model("Catway", catwaySchema);
+module.exports =
+  mongoose.models.Catway || mongoose.model("Catway", catwaySchema);
