@@ -1,8 +1,6 @@
-# ⚓ API Port de Plaisance Russel
+# API Port de Plaisance Russel
 
 Cette application propose une API RESTful permettant de gérer les **catways**, les **réservations** et les **utilisateurs** d’un port de plaisance.
-
----
 
 ## Fonctionnalités principales
 
@@ -12,8 +10,6 @@ Cette application propose une API RESTful permettant de gérer les **catways**, 
 - **Gestion des réservations** (CRUD par catway)
 - Sécurisation des routes via token JWT
 - Réponses normalisées en JSON
-
----
 
 ## Technologies utilisées
 
@@ -34,9 +30,7 @@ Avant de lancer le projet, assurez-vous d’avoir installé :
 - [MongoDB] ou un accès à MongoDB Atlas
 - [npm]/ [yarn]
 
----
-
-## 🏗️Installation
+## Installation
 
 1. **Cloner le projet :**
 
