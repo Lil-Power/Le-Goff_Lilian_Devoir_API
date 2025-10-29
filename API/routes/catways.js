@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Catway = require("../models/Catway");
+const Catway = require("../models/catway");
 
 router.get("/", async (req, res) => {
   const catways = await Catway.find();

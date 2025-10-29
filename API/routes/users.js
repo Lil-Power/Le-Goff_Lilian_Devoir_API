@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 
-const User = require("../models/User");
+const User = require("../models/user");
 const private = require("../middlewares/private");
 
 const SECRET_KEY = process.env.SECRET_KEY || "secret123";
@@ -15,6 +15,34 @@ router.get("/", private.checkJWT, async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
+});
+
+// Login
+router.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    if (!user)
+      return res.status(404).json({ message: "Utilisateur non trouvé" });
+
+    const isMatch = await user.comparePassword(password);
+    if (!isMatch)
+      return res.status(401).json({ message: "Mot de passe incorrect" });
+
+    const token = jwt.sign({ email: user.email }, SECRET_KEY, {
+      expiresIn: "1h",
+    });
+    res.json({ message: "Connexion réussie", token });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// Logout (côté client)
+router.get("/logout", (req, res) => {
+  res.json({
+    message: "Déconnexion réussie, supprimez votre token côté client",
+  });
 });
 
 // Détail d'un utilisateur
@@ -79,34 +107,6 @@ router.delete("/:email", private.checkJWT, async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-});
-
-// Login
-router.post("/login", async (req, res) => {
-  try {
-    const { email, password } = req.body;
-    const user = await User.findOne({ email });
-    if (!user)
-      return res.status(404).json({ message: "Utilisateur non trouvé" });
-
-    const isMatch = await user.comparePassword(password);
-    if (!isMatch)
-      return res.status(401).json({ message: "Mot de passe incorrect" });
-
-    const token = jwt.sign({ email: user.email }, SECRET_KEY, {
-      expiresIn: "1h",
-    });
-    res.json({ message: "Connexion réussie", token });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-
-// Logout (côté client)
-router.get("/logout", (req, res) => {
-  res.json({
-    message: "Déconnexion réussie, supprimez votre token côté client",
-  });
 });
 
 module.exports = router;
